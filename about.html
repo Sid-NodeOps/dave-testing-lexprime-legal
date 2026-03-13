@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Harrison & Associates</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --bg-primary: #fbfbfd;
+            --accent: #0071e3;
+        }
+        * {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .nav-blur {
+            backdrop-filter: saturate(180%) blur(20px);
+            background-color: rgba(251, 251, 253, 0.8);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="bg-[#fbfbfd] text-[#1d1d1f] antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-gray-200/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="text-xl font-semibold tracking-tight">
+                    Harrison<span class="text-[#0071e3]">.</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-medium text-[#86868b] hover:text-[#0071e3] transition-colors">Home</a>
+                    <a href="about.html" class="text-sm font-medium text-[#1d1d1f] hover:text-[#0071e3] transition-colors">About</a>
+                    <a href="mission.html" class="text-sm font-medium text-[#86868b] hover:text-[#0071e3] transition-colors">Mission</a>
+                    <a href="experience.html" class="text-sm font-medium text-[#86868b] hover:text-[#0071e3] transition-colors">Experience</a>
+                    <a href="contact.html" class="text-sm font-medium text-white bg-[#0071e3] px-5 py-2 rounded-full hover:bg-[#0077ed] transition-colors">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-6 py-4 space-y-3">
+                <a href="index.html" class="block text-sm font-medium text-[#86868b]">Home</a>
+                <a href="about.html" class="block text-sm font-medium text-[#1d1d1f]">About</a>
+                <a href="mission.html" class="block text-sm font-medium text-[#86868b]">Mission</a>
+                <a href="experience.html" class="block text-sm font-medium text-[#86868b]">Experience</a>
+                <a href="contact.html" class="block text-sm font-medium text-[#0071e3]">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 md:pt-40 md:pb-20 bg-[#fbfbfd]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-3xl">
+                <p class="fade-in text-[#0071e3] text-sm font-medium tracking-wide uppercase mb-4">About</p>
+                <h1 class="fade-in stagger-1 text-4xl md:text-6xl font-semibold tracking-tight leading-tight mb-6">
+                    A legacy of legal<br>
+                    <span class="text-[#86868b]">excellence.</span>
+                </h1>
+                <p class="fade-in stagger-2 text-xl text-[#86868b] font-light leading-relaxed">
+                    For over two decades, Harrison & Associates has stood as a pillar of legal integrity, championing the cause of justice in India's highest courts.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+                <div class="order-2 md:order-1">
+                    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-6">
+                        Advocate James Harrison
+                    </h2>
+                    <p class="text-[#86868b] leading-relaxed mb-6">
+                        A Senior Advocate designated by the High Court of Delhi, James Harrison has been at the forefront of constitutional and civil litigation for over 25 years. His practice spans landmark constitutional matters, complex commercial disputes, and public interest litigation that has shaped legal precedent.
+                    </p>
+                    <p class="text-[#86868b] leading-relaxed mb-6">
+                        After graduating with honors from the National Law School of India University, Bangalore, Mr. Harrison began his practice under the tutelage of distinguished jurists. His incisive legal acumen and unwavering commitment to ethical practice quickly established him as a formidable presence in the courtroom.
+                    </p>
+                    <p class="text-[#86868b] leading-relaxed">
+                        Today, Harrison & Associates represents a diverse clientele including Fortune 500 corporations, government bodies, and individuals seeking justice. The firm's reputation rests on meticulous preparation, innovative legal strategies, and an uncompromising commitment to client success.
+                    </p>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="aspect-[4/5] bg-gradient-to-br from-[#f5f5f7] to-[#e8e8ed] rounded-3xl flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-32 h-32 bg-[#0071e3]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-16 h-16 text-[#0071e3]/40" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                </svg>
+                            </div>
+                            <p class="text-sm text-[#86868b]">Professional Portrait</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials Section -->
+    <section class="py-16 md:py-24 bg-[#f5f5f7]">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-center mb-16">
+                Credentials & Recognition
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl p-8">
+                    <h3 class="text-xl font-semibold mb-6">Education</h3>
+                    <div class="space-y-6">
+                        <div class="border-l-2 border-[#0071e3] pl-6">
+                            <p class="font-medium text-[#1d1d1f]">LL.M. in Constitutional Law</p>
+                            <p class="text-sm text-[#86868b]">Harvard Law School, 2002</p>
+                        </div>
+                        <div class="border-l-2 border-[#0071e3] pl-6">
+                            <p class="font-medium text-[#1d1d1f]">B.A., LL.B. (Hons.)</p>
+                            <p class="text-sm text-[#86868b]">National Law School of India University, 1998</p>
+                        </div>
+                        <div class="border-l-2 border-[#0071e3] pl-6">
+                            <p class="font-medium text-[#1d1d1f]">Certificate in International Arbitration</p>
+                            <p class="text-sm text-[#86868b]">London Court of International Arbitration, 2010</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-8">
+                    <h3 class="text-xl font-semibold mb-6">Honors & Awards</h3>
+                    <div class="space-y-6">
+                        <div class="border-l-2 border-[#0071e3] pl-6">
+                            <p class="font-medium text-[#1d1d1f]">Senior Advocate Designation</p>
+                            <p class="text-sm text-[#86868b]">High Court of Delhi, 2015</p>
+                        </div>
+                        <div class="border-l-2 border-[#0071e3] pl-6">
+                            <p class="font-medium text-[#1d1d1f]">Best Constitutional Lawyer Award</p>
+                            <p class="text-sm text-[#86868b]">Bar Council of India, 2019</p>
+                        </div>
+                        <div class="border-l-2 border-[#0071e3] pl-6">
+                            <p class="font-medium text-[#1d1d1f]">Legal Excellence Award</p>
+                            <p class="text-sm text-[#86868b]">India Today Legal Awards, 2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bar Memberships -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-center mb-16">
+                Bar Memberships & Affiliations
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-[#f5f5f7] rounded-2xl p-6 text-center card-hover">
+                    <div class="w-12 h-12 bg-[#0071e3]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-[#0071e3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-medium">Supreme Court Bar Association</p>
+                </div>
+                <div class="bg-[#f5f5f7] rounded-2xl p-6 text-center card-hover">
+                    <div class="w-12 h-12 bg-[#0071e3]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-[#0071e3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-medium">Delhi High Court Bar Association</p>
+                </div>
+                <div class="bg-[#f5f5f7] rounded-2xl p-6 text-center card-hover">
+                    <div class="w-12 h-12 bg-[#0071e3]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-[#0071e3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-medium">International Bar Association</p>
+                </div>
+                <div class="bg-[#f5f5f7] rounded-2xl p-6 text-center card-hover">
+                    <div class="w-12 h-12 bg-[#0071e3]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-[#0071e3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <p class="text-sm font-medium">Bar Council of India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 md:py-24 bg-[#f5f5f7]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Our Team</h2>
+                <p class="text-[#86868b] text-lg max-w-2xl mx-auto">A dedicated team of legal professionals committed to excellence</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 text-center card-hover">
+                    <div class="w-24 h-24 bg-gradient-to-br from-[#f5f5f7] to-[#e8e8ed] rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-[#86868b]" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-1">Priya Sharma</h3>
+                    <p class="text-[#0071e3] text-sm mb-4">Senior Associate</p>
+                    <p class="text-[#86868b] text-sm">Constitutional law specialist with 12 years of High Court practice.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 text-center card-hover">
+                    <div class="w-24 h-24 bg-gradient-to-br from-[#f5f5f7] to-[#e8e8ed] rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-[#86868b]" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-1">Arjun Mehta</h3>
+                    <p class="text-[#0071e3] text-sm mb-4">Associate Partner</p>
+                    <p class="text-[#86868b] text-sm">Corporate litigation expert handling complex commercial disputes.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 text-center card-hover">
+                    <div class="w-24 h-24 bg-gradient-to-br from-[#f5f5f7] to-[#e8e8ed] rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-[#86868b]" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-1">Neha Reddy</h3>
+                    <p class="text-[#0071e3] text-sm mb-4">Junior Associate</p>
+                    <p class="text-[#86868b] text-sm">Civil litigation specialist with keen research capabilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 md:py-32 bg-[#1d1d1f]">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-5xl font-semibold text-white tracking-tight mb-6">
+                Let us champion your cause.
+            </h2>
+            <p class="text-[#86868b] text-lg mb-10 max-w-xl mx-auto">
+                With decades of experience and an unwavering commitment to justice, we're ready to take on your most challenging legal matters.
+            </p>
+            <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-white text-[#1d1d1f] text-sm font-medium rounded-full hover:bg-gray-100 transition-all">
+                Schedule a Consultation
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-[#f5f5f7] border-t border-gray-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <p class="text-xl font-semibold mb-4">Harrison<span class="text-[#0071e3]">.</span></p>
+                    <p class="text-sm text-[#86868b] leading-relaxed">High Court Advocate with 25+ years of distinguished legal practice.</p>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold mb-4">Navigate</p>
+                    <div class="space-y-2">
+                        <a href="about.html" class="block text-sm text-[#86868b] hover:text-[#0071e3] transition-colors">About</a>
+                        <a href="mission.html" class="block text-sm text-[#86868b] hover:text-[#0071e3] transition-colors">Mission</a>
+                        <a href="experience.html" class="block text-sm text-[#86868b] hover:text-[#0071e3] transition-colors">Experience</a>
+                        <a href="contact.html" class="block text-sm text-[#86868b] hover:text-[#0071e3] transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold mb-4">Practice Areas</p>
+                    <div class="space-y-2">
+                        <p class="text-sm text-[#86868b]">Constitutional Law</p>
+                        <p class="text-sm text-[#86868b]">Corporate Litigation</p>
+                        <p class="text-sm text-[#86868b]">Civil Matters</p>
+                        <p class="text-sm text-[#86868b]">Appellate Practice</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold mb-4">Contact</p>
+                    <div class="space-y-2">
+                        <p class="text-sm text-[#86868b]">Chamber No. 412, High Court</p>
+                        <p class="text-sm text-[#86868b]">New Delhi - 110001</p>
+                        <p class="text-sm text-[#86868b]">+91 98765 43210</p>
+                        <p class="text-sm text-[#86868b]">contact@harrisonlaw.in</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-[#86868b]">© 2026 Harrison & Associates. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-xs text-[#86868b] hover:text-[#0071e3] transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-xs text-[#86868b] hover:text-[#0071e3] transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

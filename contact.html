@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Harrison & Associates</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --bg-primary: #fbfbfd;
+            --accent: #0071e3;
+        }
+        * {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .nav-blur {
+            backdrop-filter: saturate(180%) blur(20px);
+            background-color: rgba(251, 251, 253, 0.8);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #0071e3;
+            box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-[#fbfbfd] text-[#1d1d1f] antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-gray-200/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="text-xl font-semibold tracking-tight">
+                    Harrison<span class="text-[#0071e3]">.</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-medium text-[#86868b] hover:text-[#0071e3] transition-colors">Home</a>
+                    <a href="about.html" class="text-sm font-medium text-[#86868b] hover:text-[#0071e3] transition-colors">About</a>
+                    <a href="mission.html" class="text-sm font-medium text-[#86868b] hover:text-[#0071e3] transition-colors">Mission</a>
+                    <a href="experience.html" class="text-sm font-medium text-[#86868b] hover:text-[#0071e3] transition-colors">Experience</a>
+                    <a href="contact.html" class="text-sm font-medium text-white bg-[#0071e3] px-5 py-2 rounded-full hover:bg-[#0077ed] transition-colors">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-6 py-4 space-y-3">
+                <a href="index.html" class="block text-sm font-medium text-[#86868b]">Home</a>
+                <a href="about.html" class="block text-sm font-medium text-[#86868b]">About</a>
+                <a href="mission.html" class="block text-sm font-medium text-[#86868b]">Mission</a>
+                <a href="experience.html" class="block text-sm font-medium text-[#86868b]">Experience</a>
+                <a href="contact.html" class="block text-sm font-medium text-[#1d1d1f]">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 md:pt-40 md:pb-20 bg-[#fbfbfd]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-3xl">
+                <p class="fade-in text-[#0071e3] text-sm font-medium tracking-wide uppercase mb-4">Contact</p>
+                <h1 class="fade-in stagger-1 text-4xl md:text-6xl font-semibold tracking-tight leading-tight mb-6">
+                    Let's discuss<br>
+                    <span class="text-[#86868b]">your case.</span>
+                </h1>
+                <p class="fade-in stagger-2 text-xl text-[#86868b] font-light leading-relaxed">
+                    Schedule a confidential consultation with our team. We're here to listen, advise, and advocate for your interests.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 md:gap-20">
+                <!-- Contact Form -->
+                <div>
+                    <h2 class="text-2xl font-semibold mb-6">Send us a message</h2>
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-[#1d1d1f] mb-2">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required
+                                    class="w-full px-4 py-3 bg-[#f5f5f7] border border-transparent rounded-xl text-sm transition-all">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-[#1d1d1f] mb-2">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required
+                                    class="w-full px-4 py-3 bg-[#f5f5f7] border border-transparent rounded-xl text-sm transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-[#1d1d1f] mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-3 bg-[#f5f5f7] border border-transparent rounded-xl text-sm transition-all">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-[#1d1d1f] mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone"
+                                class="w-full px-4 py-3 bg-[#f5f5f7] border border-transparent rounded-xl text-sm transition-all">
+                        </div>
+                        <div>
+                            <label for="caseType" class="block text-sm font-medium text-[#1d1d1f] mb-2">Type of Matter</label>
+                            <select id="caseType" name="caseType" required
+                                class="w-full px-4 py-3 bg-[#f5f5f7] border border-transparent rounded-xl text-sm transition-all appearance-none cursor-pointer">
+                                <option value="">Select a category</option>
+                                <option value="constitutional">Constitutional Law</option>
+                                <option value="corporate">Corporate Litigation</option>
+                                <option value="civil">Civil Litigation</option>
+                                <option value="appellate">Appellate Practice</option>
+                                <option value="pil">Public Interest Litigation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-[#1d1d1f] mb-2">Brief Description of Your Matter</label>
+                            <textarea id="message" name="message" rows="5" required
+                                class="w-full px-4 py-3 bg-[#f5f5f7] border border-transparent rounded-xl text-sm transition-all resize-none"
+                                placeholder="Please provide a brief overview of your legal matter. All information shared is confidential."></textarea>
+                        </div>
+                        <div>
+                            <label class="flex items-start gap-3 cursor-pointer">
+                                <input type="checkbox" required class="mt-1 w-4 h-4 rounded border-gray-300 text-[#0071e3] focus:ring-[#0071e3]">
+                                <span class="text-sm text-[#86868b]">I understand that this form submission does not create an attorney-client relationship and that my information will be kept confidential.</span>
+                            </label>
+                        </div>
+                        <button type="submit"
+                            class="w-full px-8 py-4 bg-[#0071e3] text-white text-sm font-medium rounded-full hover:bg-[#0077ed] transition-all">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                    <div id="form-success" class="hidden mt-6 p-6 bg-green-50 rounded-2xl">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <div>
+                                <p class="font-medium text-green-800">Message sent successfully</p>
+                                <p class="text-sm text-green-600">We'll get back to you within 24 hours.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="text-2xl font-semibold mb-6">Contact Information</h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-[#0071e3]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-[#0071e3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Chamber Address</h3>
+                                <p class="text-[#86868b] text-sm leading-relaxed">
+                                    Chamber No. 412, Block C<br>
+                                    High Court of Delhi<br>
+                                    Shershah Road, New Delhi - 110001
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-[#0071e3]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-[#0071e3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Phone</h3>
+                                <p class="text-[#86868b] text-sm">+91 98765 43210</p>
+                                <p class="text-[#86868b] text-sm">+91 11 2345 6789</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-[#0071e3]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-[#0071e3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Email</h3>
+                                <p class="text-[#86868b] text-sm">contact@harrisonlaw.in</p>
+                                <p class="text-[#86868b] text-sm">james.harrison@harrisonlaw.in</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-[#0071e3]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-[#0071e3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Office Hours</h3>
+                                <p class="text-[#86868b] text-sm">Monday - Friday: 10:00 AM - 6:00 PM</p>
+                                <p class="text-[#86868b] text-sm">Saturday: By appointment only</p>
+                                <p class="text-[#86868b] text-sm">Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Placeholder -->
+                    <div class="mt-10">
+                        <div class="aspect-video bg-gradient-to-br from-[#f5f5f7] to-[#e8e8ed] rounded-2xl flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-[#0071e3]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <svg class="w-8 h-8 text-[#0071e3]/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+                                    </svg>
+                                </div>
+                                <p class="text-sm text-[#86868b]">High Court of Delhi</p>
+                                <p class="text-xs text-[#86868b]">Shershah Road, New Delhi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24 bg-[#f5f5f7]">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Frequently Asked Questions</h2>
+                <p class="text-[#86868b] text-lg">Common queries about our consultation process</p>
+            </div>
+            <div class="space-y-4">
+                <div class="faq-item bg-white rounded-2xl overflow-hidden">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-medium">How do I schedule a consultation?</span>
+                        <svg class="faq-icon w-5 h-5 text-[#86868b] transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-[#86868b] text-sm leading-relaxed">You can schedule a consultation by filling out the contact form above, calling our office directly at +91 98765 43210, or sending an email to contact@harrisonlaw.in. Our team will respond within 24 hours to arrange a convenient time.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-2xl overflow-hidden">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-medium">What should I bring to the first meeting?</span>
+                        <svg class="faq-icon w-5 h-5 text-[#86868b] transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-[#86868b] text-sm leading-relaxed">Please bring all relevant documents related to your matter, including any court notices, contracts, correspondence, or previous legal opinions. A written timeline of events is also helpful. If documents are voluminous, please share them electronically beforehand.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-2xl overflow-hidden">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-medium">What are your consultation fees?</span>
+                        <svg class="faq-icon w-5 h-5 text-[#86868b] transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-[#86868b] text-sm leading-relaxed">Our initial consultation fee varies based on the complexity of the matter. We will provide fee details when scheduling your appointment. For ongoing representation, we offer both fixed-fee and hourly arrangements depending on the nature of the case.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-2xl overflow-hidden">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-medium">Is my information kept confidential?</span>
+                        <svg class="faq-icon w-5 h-5 text-[#86868b] transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-[#86868b] text-sm leading-relaxed">Absolutely. All information shared with us is protected by attorney-client privilege. We maintain strict confidentiality protocols and do not share client information with third parties without explicit consent, except as required by law.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-2xl overflow-hidden">
+                    <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left">
+                        <span class="font-medium">Do you handle cases outside Delhi?</span>
+                        <svg class="faq-icon w-5 h-5 text-[#86868b] transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5">
+                        <p class="text-[#86868b] text-sm leading-relaxed">Yes, we regularly appear before the Supreme Court of India and various High Courts across the country. We also have a network of associate advocates in major cities and can coordinate representation in other jurisdictions as needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 md:py-32 bg-[#1d1d1f]">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-5xl font-semibold text-white tracking-tight mb-6">
+                Every case begins with a conversation.
+            </h2>
+            <p class="text-[#86868b] text-lg mb-10 max-w-xl mx-auto">
+                Take the first step toward resolving your legal matter. Our team is ready to listen and advise.
+            </p>
+            <a href="tel:+919876543210" class="inline-flex items-center justify-center px-8 py-4 bg-white text-[#1d1d1f] text-sm font-medium rounded-full hover:bg-gray-100 transition-all">
+                Call +91 98765 43210
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-[#f5f5f7] border-t border-gray-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <p class="text-xl font-semibold mb-4">Harrison<span class="text-[#0071e3]">.</span></p>
+                    <p class="text-sm text-[#86868b] leading-relaxed">High Court Advocate with 25+ years of distinguished legal practice.</p>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold mb-4">Navigate</p>
+                    <div class="space-y-2">
+                        <a href="about.html" class="block text-sm text-[#86868b] hover:text-[#0071e3] transition-colors">About</a>
+                        <a href="mission.html" class="block text-sm text-[#86868b] hover:text-[#0071e3] transition-colors">Mission</a>
+                        <a href="experience.html" class="block text-sm text-[#86868b] hover:text-[#0071e3] transition-colors">Experience</a>
+                        <a href="contact.html" class="block text-sm text-[#86868b] hover:text-[#0071e3] transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold mb-4">Practice Areas</p>
+                    <div class="space-y-2">
+                        <p class="text-sm text-[#86868b]">Constitutional Law</p>
+                        <p class="text-sm text-[#86868b]">Corporate Litigation</p>
+                        <p class="text-sm text-[#86868b]">Civil Matters</p>
+                        <p class="text-sm text-[#86868b]">Appellate Practice</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold mb-4">Contact</p>
+                    <div class="space-y-2">
+                        <p class="text-sm text-[#86868b]">Chamber No. 412, High Court</p>
+                        <p class="text-sm text-[#86868b]">New Delhi - 110001</p>
+                        <p class="text-sm text-[#86868b]">+91 98765 43210</p>
+                        <p class="text-sm text-[#86868b]">contact@harrisonlaw.in</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-[#86868b]">© 2026 Harrison & Associates. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-xs text-[#86868b] hover:text-[#0071e3] transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-xs text-[#86868b] hover:text-[#0071e3] transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-trigger').forEach(trigger => {
+            trigger.addEventListener('click', function() {
+                const item = this.closest('.faq-item');
+                const content = item.querySelector('.faq-content');
+                const icon = item.querySelector('.faq-icon');
+                
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.querySelector('.faq-content').classList.add('hidden');
+                        otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                    }
+                });
+                
+                // Toggle current item
+                content.classList.toggle('hidden');
+                icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Hide form and show success message
+            this.style.display = 'none';
+            document.getElementById('form-success').classList.remove('hidden');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
